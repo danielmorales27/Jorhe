@@ -1,9 +1,15 @@
 #Convertir a mayusculas, quitar espacios y caracteres especiales e invertir palabra o frase
 def palindromo(frase):
-    normal = "".join(caracter.upper() for caracter in frase if caracter.isalpha())
-    invertida = normal[::-1]
-    return normal == invertida
+    normal = ""
+    for caracter in frase:
+        if caracter.isalpha():
+            normal += caracter.upper()
+            invertida = ""
+    for i in range(len(normal) - 1, -1, -1):
+        invertida += normal[i]
 
+ # Comparar ambas versiones
+    return normal == invertida
 
 #Solicitar palabra o frase
 palabra_o_frase = input ("Ingresa palabra o frase: ")
